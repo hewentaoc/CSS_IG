@@ -1,0 +1,172 @@
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+html,
+body,
+.wrapper{
+    background-color: #000;
+    height: 100%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .content{
+    overflow: hidden;
+    width:80%;
+    height: 80%;
+    display: flex;
+    /* 居中的前提 */
+    align-items: center;
+    justify-content: space-between;
+}
+.wrapper .content .item{
+    position: relative;
+    border-radius: 20px;
+    width:16%;
+    height: 100%;
+    opacity: 0.6; 
+    transition:opacity 0.2s linear;
+    transition:height 0.5s linear 0.5s, width 0.5s linear;  
+}
+.wrapper .content .item .box .title{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    font-size:32px;   
+    font-family:simsun; 
+    font-weight: bold;
+    color:#DDD;
+    text-shadow: 1px 1px 3px #000;
+    transition: opacity 0.2s linear ,font-size 0.2s linear;
+    transform: translate(-50%,-50%);
+}
+
+.wrapper .content .item:hover{
+    opacity: 1;
+}
+.wrapper .content .item:hover .title{
+    font-size: 38px;
+}
+.wrapper .content .item .box{
+    cursor: pointer;
+    transition: all 0.2s linear;
+    width:100%;
+    height: 100%;
+}
+.wrapper .content .item:nth-of-type(1) .box{
+    transition-delay: 0.1s; 
+}
+.wrapper .content .item:nth-of-type(2) .box{
+    transition-delay: 0.2s; 
+}
+.wrapper .content .item:nth-of-type(3) .box{
+    transition-delay: 0.3s; 
+}
+.wrapper .content .item:nth-of-type(4) .box{
+    transition-delay: 0.4s; 
+}
+.wrapper .content .item:nth-of-type(5) .box{
+    transition-delay: 0.5s; 
+}
+.wrapper .content .item:nth-of-type(6) .box{
+    transition-delay: 0.6s; 
+}
+
+
+.wrapper .content .item .box .bg{
+    width:100%;
+    height: 100%;
+    background-image: url(./image/1.jfif);
+    background-size: cover;
+    background-position:center top;
+    border-radius: 20px;
+}
+.wrapper .content .item:nth-of-type(2) .box .bg{
+    background-image: url(./image/2.jfif);  
+}
+.wrapper .content .item:nth-of-type(3) .box .bg{
+    background-image: url(./image/3.jfif);  
+}
+.wrapper .content .item:nth-of-type(4) .box .bg{
+    background-image: url(./image/4.jfif);  
+}
+.wrapper .content .item:nth-of-type(5) .box .bg{
+    background-image: url(./image/5.jfif);  
+}
+.wrapper .content .item:nth-of-type(6) .box .bg{
+    background-image: url(./image/6.jfif);  
+}
+.init .content  .item .box{
+  transition:transform 0.5s linear;
+    transform: translateY(101%);
+}
+.wrapper .content .item .box .dir{
+    opacity: 0;
+}
+.wrapper .content .item .box .dir .header{
+    position: absolute;
+    font-size: 32px;   
+    font-family:simsun; 
+    font-weight: bold;
+    color:#DDD;
+    text-shadow: 1px 1px 3px #000;
+    top:10px;
+    left: 10px;    
+}
+.wrapS .content .item .box .dir{
+    opacity: 1;
+    transition:opacity 0.5s linear 1s;
+}
+
+.wrapS .content .item.active{
+    width:100%;
+}
+.wrapS .content .item:not(.active){
+    width:0%;
+    height:0%;
+}
+/* 少了一个父级align-items 使子元素居中 */
+.wrapS .content .item{
+    opacity: 1;
+    transition:height 0.5s linear, width 0.5s linear 0.5s;  
+}
+.wrapS .content .item .title {
+    opacity: 0;
+}
+.wrapS .content .item.active .box .dir .close{
+    width:30px;
+    height:30px;
+    position: absolute; 
+    right: 28px;
+    top:28px;
+    transition: all 0.5s linear 1s;
+    transform: rotate(360deg) ;
+    cursor:pointer;
+}
+.wrapS .content .item.active .box .dir .close::before,
+.wrapS .content .item.active .box .dir .close::after
+{
+    content: " ";
+    position:absolute;
+    width:100%;
+    height:4px;
+    top:calc(50% - 2px);
+    left: calc(50% - 15px);
+    background-color: #fff;
+}
+.wrapS .content .item.active .box .dir .close::after{
+    transform: rotate(45deg);
+}
+.wrapS .content .item.active .box .dir .close::before{
+    transform: rotate(-45deg);
+}
+audio{
+    position: fixed;
+    width: 200px;
+    height: 30px;
+    left: 10px;
+    bottom:10px;
+}
